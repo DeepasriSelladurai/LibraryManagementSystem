@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+    line-height: 1.6;
+}
+
+h3 {
+    
+    color: #007bff;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 10px 0;
+}
+
+</style>
+    
+    <main>
+        <section class="about-section">
+            <h3>Welcome to Our Library</h2>
+            <p>Our library is committed to providing a welcoming space for knowledge seekers and book lovers. With a vast collection of books, digital resources, and community programs, we aim to foster a love for reading and lifelong learning.</p>
+
+            <h3>Our Mission</h2>
+            <p>To provide accessible, diverse, and enriching resources that support the educational, recreational, and informational needs of our community.</p>
+
+            <h3>History</h2>
+            <p>Established in 1990, our library has grown from a small collection of books to a modern facility with thousands of titles, digital resources, and a dedicated team of staff and volunteers. Our journey has been marked by continuous improvements, community engagement, and a commitment to excellence.</p>
+
+            <h3>Services We Offer</h2>
+            <ul>
+                <li>Book Borrowing and Returns</li>
+                <li>Community Programs and Workshops</li>
+                <li>Research Assistance and Study Spaces</li>
+                <li>Special Collections and Archives</li>
+            </ul>
+
+          </section>
+    </main>
+{% endblock %}

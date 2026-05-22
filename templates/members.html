@@ -1,0 +1,146 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Library Members</h1>
+    
+    <!-- Membership Details Section -->
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th><a href="?sort=id">Member ID</a></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Membership Expiry</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members_data|sort(attribute='id') %}
+                <tr>
+                    <td>{{ member.id }}</td>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.expiry_date }}</td>
+                    <td>
+                        <a href="/profile.html/{{ member.id }}" class="btn btn-primary">Profile</a>
+                        <a href="/extend_membership_form/{{ member.id}}" class="btn btn-success">Extend Membership</a>
+                        <a href="/remove/{{ member.id }}" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+</div>
+    <!-- Add Member Form -->
+<div class="mt-5">
+        <h3>Add New Member</h3>
+        <form method="POST" action="\addmember">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Add Member</button>
+        </form>
+</div>
+</div>
+
+<!-- Profile Page -->
+
+
+<style>
+    .profile-container {
+        padding: 5% 15%;
+        margin: 20%;
+        border: 15px solid #ddd;
+    }
+    .profile-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .mt-5{
+        padding: 10% 25%;
+        margin: 15%;
+        border: 15px solid green;
+
+    }
+    .container {
+        padding: 2%;
+        margin: 10%;
+        border: 5px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    form{
+        padding: 5%;
+        margin: 2%;
+        display: inline-block;
+        justify-content: space-between;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+table tbody tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.btn {
+    margin: 2px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.btn-primary ,.btn-success , .btn-danger {
+    border: none;
+}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+

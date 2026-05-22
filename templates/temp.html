@@ -1,0 +1,65 @@
+<div class="profile-container">
+    <div class="profile-header">
+        <h2>Member Profile</h2>
+    </div>
+    <div class="profile-body">
+        <p><strong>Name:</strong> {{ member.name }}</p>
+        <p><strong>Email:</strong> {{ member.email }}</p>
+        <p><strong>Membership Expiry:</strong> {{ member.expiry_date }}</p>
+    </div>
+    <div>
+        <a href="{{ url_for('extend_membership', member_id=member.id) }}" class="btn btn-success">Extend Membership</a>
+    </div>
+</div>
+<div class="container2">
+    <div class="genre-dropdown">
+        <button>Genres</button>
+        <div class="genre-options">
+            <a href="">g1</a>
+            <a href="">g2</a>
+            <a href="">g3</a>
+            <a href="">g4</a>
+            <a href="">g5</a>
+        </div>
+    </div>
+</div>books_info = {
+    "book_1": {
+        "publisher": "Pan Macmillan",
+        "publication_company": "Macmillan Publishers",
+        "edition": "3rd Edition",
+        "price": 1200
+    },
+    "book_2": {
+        "publisher": "HarperCollins",
+        "publication_company": "News Corp",
+        "edition": "1st Edition",
+        "price": 800
+    },
+    "book_3": {
+        "publisher": "Penguin Random House",
+        "publication_company": "Bertelsmann",
+        "edition": "Revised Edition",
+        "price": 500
+    },
+    "book_4": {
+        "publisher": "Simon & Schuster",
+        "publication_company": "Paramount Global",
+        "edition": "4th Edition",
+        "price": 900
+    },
+    "book_5": {
+        "publisher": "Hachette Book Group",
+        "publication_company": "Hachette Livre",
+        "edition": "2nd Edition",
+        "price": 650
+    },
+    "book_6": {
+        "publisher": "Charles Scribner",
+        "publication_company": "Paradise Book House",
+        "edition": "5th Edition",
+        "price": 700
+    },
+
+}
+
+print("Books information dictionary with different publishers, publication companies, and specified editions created successfully!")

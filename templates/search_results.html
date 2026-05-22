@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if book %}
+    <div class="book-container">
+    <div class="book-image">
+        <img src="{{ url_for('static', filename=book.image) }}" alt="{{ book.title }}" width="500%" height="500%">
+    </div>
+    <div class="book-details">
+        <p><strong>Title:</strong> {{ book.title }}</p>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Publication Year:</strong> {{ book.release_date }}</p>
+    </div>
+    <div>
+        <a href="reserve_book/{{book.title}}" class="btn btn-primary">Reserve Book Now</a>
+    </div>
+</div>
+    {% else %}
+        <p>No book found with that title.</p>
+    {% endif %}
+    <a href="/" class="btn btn-primary">Search Again</a>
+</body>
+<style>
+    .book-image{
+
+        display: block;
+        justify-content: center;
+        width: 15%;
+        height:5%;
+    }
+    body{
+        background-color: #f0f0f0;
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+    .book-container, .book-details{
+        text-align: center;
+        margin-bottom: 25px;
+        align-items: center;
+        display: block;
+        justify-content: space-around;
+        overflow:hidden;
+        width: 80%;
+        height:75%;
+        padding: 5%;
+}
+.book-container{
+  text-align: center;
+  margin-bottom: 25px;
+  align-items: center;
+  display: block;
+  justify-content: center;
+  padding: 5% 5%;
+  border: 1px solid #ddd;
+  border-radius: 5%;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+.book-container {
+
+  display: block; /* Show all book cards */
+  padding: 5%;
+  align-items: center;
+}
+.btn {
+    background-color:aqua;
+    margin: 2px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color:black;
+}
+
+</style>
+</html>

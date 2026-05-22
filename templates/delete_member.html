@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <header>
+        <h1>Delete Membership</h1>
+    </header>
+    <style>
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <main>
+            <form action="{{ url_for('delete_member.html') }}" method="post">
+                <p>Are you sure you want to delete your membership, {{ current_user.username }}?</p>
+
+                <input type="submit" value="Delete Membership">
+            </form>
+        
+            <p>Please <a href="{{ url_for('login') }}">login</a> to delete your membership.</p>
+    </main>
+{% endblock %}
